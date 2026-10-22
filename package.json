@@ -1,0 +1,21 @@
+{
+  "name": "@dsh-external/dsh-session-mirror",
+  "version": "0.1.0",
+  "description": "按会话逐个镜像备份 DSH 对话日志到指定目录：每个对话一份最新，未变化则跳过；保留源已删除的会话（防误删），并区分主对话/子对话。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "BSD-3-Clause",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

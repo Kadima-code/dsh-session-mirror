@@ -1,0 +1,5 @@
+# dsh-session-mirror 的 profile patch 层：插一行把本插件挂进组合树。
+# 纯 host 插件（无浏览器半），按会话镜像备份 ~/.dsh/sessions。
+- insert:
+    - id: dsh-session-mirror
+      name: '@dsh-external/dsh-session-mirror'
