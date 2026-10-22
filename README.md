@@ -27,6 +27,16 @@
 
 每个会话文件第一行是 `session` 头，含 `origin` / `parentSession` / `delegationDepth`。判定：`origin === 'subagent'` 或有 `parentSession` 或 `delegationDepth > 0` → 子对话，否则主对话。
 
+## 一键恢复
+
+两种方式：
+
+- **对话里直接说**：「恢复会话 <标题或ID前缀>」——模型调用工具 `session_mirror_restore`（传 `dryRun: true` 可先预览）。
+- **命令行**：`node tools/restore.mjs`（交互式，列出可恢复会话按序号选）；`--list` 只列已删除可恢复的；`<ID前缀或标题>` 预览；加 `--yes` 执行。也可双击 `tools/一键恢复.bat`。
+
+恢复会把备份文件拷回 `~/.dsh/sessions/<工作区>/<会话ID>/`（若该会话是归档状态，会顺带取消归档），回 DSH 按 F5 即可见。
+
+
 ## 安装（标准 bundle）
 
 1. `~/.dsh/profiles/desktop/package.json` 的 `dependencies` 里 link 本目录（已就位）
