@@ -18,9 +18,10 @@
 
 - 目标目录默认 `E:\DshChatBackup`（可由 profile 配置 `dest` 覆盖）
 - `sessions/` 目录结构与 `~/.dsh/sessions` 一致，恢复单会话只需把对应文件复制回去
-- `_mirror-state.json`：每份记录 size / mtime / copiedAt / kind(main|sub) / parentSession / delegationDepth，以及 orphaned
+- `_mirror-state.json`：每份记录 size / mtime / copiedAt / kind(main|sub) / parentSession / delegationDepth / cwd / createdAt / id / title，以及 orphaned
 - `怎么恢复.txt`：中文恢复说明（首次运行写入）
 - `_mirror.log`：每次运行记录
+- `对话总览.md`：给人看的目录树——按「工作区 → 主对话 → 子对话」组织，附每个对话的实际显示名（标题）、时间、大小、备份路径与「源已删除」标记，方便查询
 
 ## 主 / 子对话识别
 
