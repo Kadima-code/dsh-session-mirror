@@ -19,18 +19,7 @@ if (!fs.existsSync(stateFile)) { console.error('找不到备份状态文件：' 
 const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'))
 const opts = { dest }
 
-function uniqRecs() {
-  const uniq = new Map()
-  for (const [key, r] of Object.entries(state)) {
-    if (!r || typeof r !== 'object') continue
-    const id = r.session || r.id || key
-    const k = (r.ws || '') + '/' + id
-    const score = (r.orphaned ? 0 : 2) + (/^session\.v\d+\.jsonl\.zstd$/.test(r.file || '') ? 1 : 0)
-    const prev = uniq.get(k)
-    if (!prev || score > prev._score) uniq.set(k, { ...r, key, id, _score: score })
-  }
-  return [...uniq.values()]
-}
+const uniqRecs = () => mod.uniqSessions(state)
 const fmt = (r) => `${(r.title || '(无标题)').padEnd(28)} ${r.id}  ${r.orphaned ? '【已删除·可恢复】' : ''}`
 async function doRestore(q, yes) {
   const r = await mod.restoreSession(opts, state, q, { dryRun: !yes })
