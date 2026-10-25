@@ -1,5 +1,5 @@
 {
-  "name": "@dsh-external/dsh-session-mirror",
+  "name": "@kadima-code/dsh-session-mirror",
   "version": "0.1.0",
   "description": "按会话逐个镜像备份 DSH 对话日志到指定目录：每个对话一份最新，未变化则跳过；保留源已删除的会话（防误删），并区分主对话/子对话。",
   "type": "module",
@@ -18,5 +18,23 @@
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kadima-code/dsh-session-mirror.git"
+  },
+  "homepage": "https://github.com/Kadima-code/dsh-session-mirror#readme",
+  "bugs": {
+    "url": "https://github.com/Kadima-code/dsh-session-mirror/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "backup",
+    "session",
+    "restore",
+    "conversation"
+  ],
+  "author": "Kadima"
 }

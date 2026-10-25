@@ -27,7 +27,7 @@ This is a standard DSH bundle: place the package, register it in the profile, th
 ### Option 1: npm (once published)
 
 ```bash
-npm i @dsh-external/dsh-session-mirror
+npm i @kadima-code/dsh-session-mirror
 ```
 
 Then register it in `~/.dsh/profiles/desktop/package.json` (see below).
@@ -38,20 +38,20 @@ Unzip into `~/.dsh/_plugins/dsh-session-mirror`, then register it.
 
 ### Option 3: local link
 
-Use `"@dsh-external/dsh-session-mirror": "link:<absolute path>"` in `dependencies`.
+Use `"@kadima-code/dsh-session-mirror": "link:<absolute path>"` in `dependencies`.
 
 ### Profile registration (`~/.dsh/profiles/desktop/package.json`)
 
 ```jsonc
 {
   "dependencies": {
-    "@dsh-external/dsh-session-mirror": "link:C:/Users/<you>/.dsh/_plugins/dsh-session-mirror"
+    "@kadima-code/dsh-session-mirror": "link:C:/Users/<you>/.dsh/_plugins/dsh-session-mirror"
   },
   "dsh": {
     "profile": {
       "bundles": [
         // …
-        "@dsh-external/dsh-session-mirror"
+        "@kadima-code/dsh-session-mirror"
       ]
     }
   }

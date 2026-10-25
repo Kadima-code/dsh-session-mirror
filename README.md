@@ -27,7 +27,7 @@
 ### 方式一：npm（发布后）
 
 ```bash
-npm i @dsh-external/dsh-session-mirror
+npm i @kadima-code/dsh-session-mirror
 ```
 
 随后在 `~/.dsh/profiles/desktop/package.json` 登记（见下方「profile 登记」）。
@@ -38,20 +38,20 @@ npm i @dsh-external/dsh-session-mirror
 
 ### 方式三：本地目录 link
 
-`dependencies` 里写 `"@dsh-external/dsh-session-mirror": "link:<插件目录绝对路径>"`。
+`dependencies` 里写 `"@kadima-code/dsh-session-mirror": "link:<插件目录绝对路径>"`。
 
 ### profile 登记（`~/.dsh/profiles/desktop/package.json`）
 
 ```jsonc
 {
   "dependencies": {
-    "@dsh-external/dsh-session-mirror": "link:C:/Users/<你>/.dsh/_plugins/dsh-session-mirror"
+    "@kadima-code/dsh-session-mirror": "link:C:/Users/<你>/.dsh/_plugins/dsh-session-mirror"
   },
   "dsh": {
     "profile": {
       "bundles": [
         // …其它…
-        "@dsh-external/dsh-session-mirror"
+        "@kadima-code/dsh-session-mirror"
       ]
     }
   }

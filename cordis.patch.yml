@@ -2,4 +2,4 @@
 # 纯 host 插件（无浏览器半），按会话镜像备份 ~/.dsh/sessions。
 - insert:
     - id: dsh-session-mirror
-      name: '@dsh-external/dsh-session-mirror'
+      name: '@kadima-code/dsh-session-mirror'
